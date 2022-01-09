@@ -1,6 +1,6 @@
-# Quick Info:
-# I have notated almos all the code and cleaned up ssome of it, I noted out your old collision system and made my own jank as heck one and I have added sprites but still need to figure out how to remove tha enemy in the top left (also the resolution is now 1650x1200)
-# The game over screen is incomplete and i am still working on it
+# *Quick Info:
+# *I have notated almos all the code and cleaned up ssome of it, I noted out your old collision system and made my own jank as heck one and I have added sprites but still need to figure out how to remove tha enemy in the top left (also the resolution is now 1650x1200)
+# *The game over screen is incomplete and i am still working on it
 
 #imports
 import pygame, random, sys, time
