@@ -5,6 +5,9 @@ import pygame, random, sys, time
 # * I have notated almos all the code and cleaned up ssome of it, I noted out your old collision system and made my own jank as heck one and I have added sprites but still need to figure out how to remove tha enemy in the top left (also the resolution is now 1650x1200)
 # * The game over screen is incomplete and i am still working on it
 # TODO: make game over screen stay open till any key pressed then try again
+# TODO: fix random enemy in top right
+# TODO: fix enemy not spawning in leftmost column
+# TODO: make more skins for the game
 
 #classes # ? Does this need to be here?
 
@@ -28,15 +31,10 @@ class Enemy(pygame.sprite.Sprite):
 #pygame
 pygame.init()
 
-#version check
-if pygame.version.vernum < (1, 0):
-	print ('Warning, this is an older version of Block Jam which may cause performance issues. (%s)') % pygame.version.ver
-	disable_advanced_features = True
-
 #screen setup
 WIDTH = 1650
 HEIGHT = 1200
-icon = pygame.image.load('resources/icon.png')
+icon = pygame.image.load('resources/icon.ico')
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 #backGround = pygame.image.load('resources/bg.png')
 pygame.display.set_caption('Block Jam')
