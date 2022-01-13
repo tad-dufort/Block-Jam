@@ -1,2 +1,4 @@
 *.exe
 settings
+source\__pycache__/#
+Block Jam/
