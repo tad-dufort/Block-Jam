@@ -4,10 +4,10 @@ import pygame, random, sys, time
 # * Quick Info:
 # * I have notated almos all the code and cleaned up ssome of it, I noted out your old collision system and made my own jank as heck one and I have added sprites but still need to figure out how to remove tha enemy in the top left (also the resolution is now 1650x1200)
 # * The game over screen is incomplete and i am still working on it
-# TODO: make game over screen stay open till any key pressed then try again
-# TODO: fix random enemy in top right
-# TODO: fix enemy not spawning in leftmost column
-# TODO: make more skins for the game
+# TODO: Make game over screen stay open till any key pressed then try again
+# TODO: Fix random enemy in top right
+# TODO: Fix enemy not spawning in leftmost column
+# TODO: Make more skins for the game
 
 #classes # ? Does this need to be here?
 
