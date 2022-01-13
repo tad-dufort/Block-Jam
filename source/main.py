@@ -6,7 +6,7 @@ import pygame, random, sys, time
 # * The game over screen is incomplete and i am still working on it
 # TODO: make game over screen stay open till any key pressed then try again
 
-#classes # ? does this need to be here
+#classes # ? Does this need to be here?
 
 #sprites
 class Player(pygame.sprite.Sprite):
