@@ -3,7 +3,7 @@
 ## Cloning from github
 
 In either [GitHub Desktop](https://central.github.com/deployments/desktop/desktop/latest/win32) or [GitKraken](https://www.gitkraken.com/download/windows64) log in with your Github and press clone on the homepage, type ```https://github.com/lavadaragon15396/Block-Jam``` in the repo field and clone to anywhere on your PC.
-once cloned open the folder in any code editor (VSC recommended) and start editing. once done you can commit and push the files and they will be uplaoded!
+once cloned open the folder in any code editor (VSC recommended), select your branch (Tad, Cass or main) and start editing. once done you can commit and push the files and they will be uplaoded!
 ## Editing the game
 
 Open the source folder in whatever IDE you're using and you can just edit it like normal
