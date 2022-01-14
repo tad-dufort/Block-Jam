@@ -1,17 +1,24 @@
-#imports
+# Block Jam By Cass (and a few bits by Tad)
+
+# * Imports
 import pygame, random, sys, time
 
 # * Quick Info:
+
+# * Notes with # ! are old code
+
 # * I have notated almos all the code and cleaned up ssome of it, I noted out your old collision system and made my own jank as heck one and I have added sprites but still need to figure out how to remove tha enemy in the top left (also the resolution is now 1650x1200)
 # * The game over screen is incomplete and i am still working on it
-# TODO: Make game over screen stay open till any key pressed then try again
+
+# * TODO LIST
+# TODO: make game over screen stay open till any key pressed then try again (At end game)
 # TODO: Fix random enemy in top right
 # TODO: Fix enemy not spawning in leftmost column
 # TODO: Make more skins for the game
 
-#classes # ? Does this need to be here?
+# * Classes # ? Does this need to be here?
 
-#sprites
+# * Sprites
 class Player(pygame.sprite.Sprite):
 	def __init__(self):
 		super().__init__()
@@ -28,27 +35,27 @@ class Enemy(pygame.sprite.Sprite):
 	def update(self, x, y):
 		self.rect.bottomleft = [x, y]
        
-#pygame
+# * Pygame
 pygame.init()
 
-#screen setup
+# * Screen setup
 WIDTH = 1650
 HEIGHT = 1200
 icon = pygame.image.load('resources/icon.ico')
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-#backGround = pygame.image.load('resources/bg.png')
+# backGround = pygame.image.load('resources/bg.png')
 pygame.display.set_caption('Block Jam')
 pygame.display.set_icon(icon)
 pygame.mouse.set_visible(False)
 
-#colors
+# * Colors
 BLUE = (0,0,255)
 RED = (255,0,0)
 GREEN = (0,255,0)
 WHITE = (255,255,255)
 BLACK = (0,0,0)
 
-#enemy data
+# * Enemy data
 enemy_size = 50
 gridWidth = WIDTH/enemy_size
 enemy_pos = [random.randint(1, gridWidth-1)*enemy_size, 0]
@@ -57,7 +64,7 @@ enemy_group = pygame.sprite.Group()
 enemy = Enemy()
 enemy_group.add(enemy)
 
-#player data
+# * Player data
 player_size = 50
 player_pos = [(WIDTH/2)-(player_size/2), HEIGHT-(player_size*2)]
 player_group = pygame.sprite.Group()
@@ -66,7 +73,7 @@ player_group.add(player)
 player.update(player_pos[0], player_pos[1])
 
 
-#some variables
+# * Some variables
 SPEED = 5
 game_over = False
 end_game = False
@@ -77,7 +84,7 @@ gameOverFont = pygame.font.Font("resources/fontBold.otf", 96)
 
 
 
-#level set
+# * Level set
 def set_level(score, SPEED):
 	if score < 150:
 		SPEED = 10
@@ -94,7 +101,7 @@ def set_level(score, SPEED):
 	return SPEED	
 
 
-#enemy functions
+# * Enemy functions
 def drop_enemies(enemy_list):
 	delay = random.random()
 	if len(enemy_list) < 30 and delay < 0.05:
@@ -104,9 +111,9 @@ def drop_enemies(enemy_list):
 		enemy = Enemy()
 		enemy_group.add(enemy)
 
-#def draw_enemies(enemy_list, enemy_pos):
-# 	for enemy_pos in enemy_list:
-# 		pygame.draw.rect(screen, RED, (enemy_pos[0], enemy_pos[1], enemy_size, enemy_size))
+# ! def draw_enemies(enemy_list, enemy_pos):
+# !  	for enemy_pos in enemy_list:
+# !  		pygame.draw.rect(screen, RED, (enemy_pos[0], enemy_pos[1], enemy_size, enemy_size))
 		
 
 def update_enemy_positions(enemy_list, score):
@@ -121,7 +128,7 @@ def update_enemy_positions(enemy_list, score):
 			score += 1
 	return score		
 
-#collision functions
+# * Collision functions
 def collision_check(enemy_list, player_pos):
 	for enemy_pos in enemy_list:
 		if detect_collision(enemy_pos, player_pos):
@@ -140,25 +147,25 @@ def detect_collision(player_pos, enemy_pos):
 			return True
 	return False
 
-	#if (e_x >= p_x and e_x < (p_x + player_size)) or (p_x >= e_x and p_x < (e_x + enemy_size)):
-	#	if (e_y >= p_y and e_y < (p_y + player_size)) or (p_y >= e_y and p_y < (e_y + enemy_size)):
-	#		return True
-	#return False	
+	# ! if (e_x >= p_x and e_x < (p_x + player_size)) or (p_x >= e_x and p_x < (e_x + enemy_size)):
+	# ! 	if (e_y >= p_y and e_y < (p_y + player_size)) or (p_y >= e_y and p_y < (e_y + enemy_size)):
+	# ! 		return True
+	# ! return False	
 
-#game loop
+# * Game loop
 while not game_over:
 
-	#end game # TODO: make game over screen stay open till any key pressed then try again
+	# * End game 
 	if end_game:
 		time.sleep(2.5)
 		game_over = True
     
-	#exit with cross
+	# * Exit with cross
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			sys.exit()	
 
-		#movement
+		# * Movement
 		if event.type == pygame.KEYDOWN:
 
 			x = player_pos[0]
@@ -191,31 +198,31 @@ while not game_over:
 			player_pos = [x, y]
 			player.update(player_pos[0], player_pos[1])
 
-	#bg
-	#screen.blit(backGround, (0, 0))
+	# * BG
+	#  screen.blit(backGround, (0, 0))
 	screen.fill(BLACK)
 
-	#score
+	# * Score
 	ScoreText = "Score:" + str(score)
 	ScoreLabel = scoreFont.render(ScoreText, 1, WHITE)
 	screen.blit(ScoreLabel, (WIDTH-((WIDTH/2)+125), HEIGHT-1150))
 	score = update_enemy_positions(enemy_list, score)
  
-	#speed
+	# * Speed
 	SPEED = set_level(score, SPEED)
 	
-	#draw and drop enemies
+	# * Draw and drop enemies
 	drop_enemies(enemy_list)
-	#draw_enemies(enemy_list)
+	# draw_enemies(enemy_list)
 	drop_enemies(enemy_list)
-	#draw_enemies(enemy_list)
+	# draw_enemies(enemy_list)
 
  
- 	#draw player
-	#pygame.draw.rect(screen, BLUE, (player_pos[0], player_pos[1], player_size, player_size))
+ 	# * Draw player
+	# ! pygame.draw.rect(screen, BLUE, (player_pos[0], player_pos[1], player_size, player_size))
 	player_group.draw(screen)
 	
-	#collision check
+	# * Collision check
 	if collision_check(enemy_list, player_pos):
 		print(' ')
 		print('Final score :', score)
@@ -226,7 +233,7 @@ while not game_over:
 		screen.blit(GameOverLabel, (WIDTH-((WIDTH/2)+250), HEIGHT-750 ))
 		end_game = True
 	
- 	#clock
+ 	# * Clock
 	clock.tick(50)
  
 	pygame.display.update()
