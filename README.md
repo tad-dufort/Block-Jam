@@ -11,7 +11,7 @@ Open the source folder in whatever IDE you're using and you can just edit it lik
 I also recommend using visual studio code (as it has github integration) with these addons:
 
 - [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
-- [Better Comments](`https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+- [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 - [Markdown All in one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
 - [Github](https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-github)
