@@ -14,6 +14,7 @@ I also recommend using visual studio code (as it has github integration) with th
 - [Better Comments](`https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 - [Markdown All in one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
+- [Github](https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-github)
 
 ## Building the game
 
