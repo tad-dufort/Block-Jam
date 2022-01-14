@@ -8,7 +8,7 @@ once cloned open the folder in any code editor (VSC recommended) and start editi
 
 Open the source folder in whatever IDE you're using and you can just edit it like normal
 
-I also recommend using visual studio code (as it has github integration) with these addons:
+I also recommend using visual studio code (as it has github integration) with these extentions:
 
 - [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
 - [Better Comments](`https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)

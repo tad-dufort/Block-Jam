@@ -81,13 +81,13 @@
 ::   107m = White
 
 @echo off
-::setup (set size and UDF 8 text encoding)
+:: setup (set size and UDF 8 text encoding)
 TITLE Initializing . . .
 chcp 65001
 mode 95,30
 cls
 
-::check for admin
+:: check for admin
 net session >nul 2>&1
 if %errorLevel% == 0 (
     goto installer
@@ -130,7 +130,7 @@ echo                                   [90mPress any key to start
 echo                                           . . .[0m
 PAUSE >nul
 cls
-::welcome screen
+:: welcome screen
 echo [91m██████╗ ██╗      █████╗  █████╗ ██╗  ██╗  [34m     ██╗ █████╗ ███╗   ███╗[0m
 echo [91m██╔══██╗██║     ██╔══██╗██╔══██╗██║ ██╔╝  [34m     ██║██╔══██╗████╗ ████║[0m
 echo [91m██████╦╝██║     ██║  ██║██║  ╚═╝█████═╝   [34m     ██║███████║██╔████╔██║[0m
@@ -163,7 +163,7 @@ goto :choice2
 
 :desktopShortcut
 
-::VBScripts for shortcuts
+:: VBScripts for shortcuts
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
